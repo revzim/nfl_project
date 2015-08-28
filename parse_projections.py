@@ -85,7 +85,9 @@ def get_player():
 
 def get_player_stats():
     player = get_player()
-    for p in new_players:
-        if p.__contains__(player):
-            print p
+    for p in player_objs:
+        fullname = "%s %s" % (p.player_fname, p.player_lname)
+        if player == fullname:
+            attrs = vars(p)
+            print '\n'.join("%s: %s" % item for item in attrs.items())
 get_player_stats()
