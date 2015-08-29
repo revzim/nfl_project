@@ -76,10 +76,12 @@ for player in player_objs:
 chosen_player = ''
 def get_player():
     print 'Which player\'s stats would you like to view?'
-    answer = raw_input()
-    print 'You chose %s' % answer
-    print 'Please wait while we search up your stats...'
-    chosen_player = answer
+    chosen_player = raw_input()
+    if chosen_player == "%s %s" % (player.player_fname, player.player_lname):
+        print 'Please wait while we search up your stats...'
+    else:
+        print 'Player not in list, choose new player:'
+        chosen_player = raw_input()
     return chosen_player
 #get_player()
 
