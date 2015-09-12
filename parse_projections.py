@@ -79,13 +79,41 @@ def get_player():
     answer = raw_input()
     print 'You chose %s' % answer
     print 'Please wait while we search up your stats...'
-    chosen_player = answer
+    chosen_player = answer.lower()
     return chosen_player
 #get_player()
 
+player_dict = {
+        'fname': '',
+        'lname': '',
+        'player_position': '',
+        'player_team': '',
+        'opp_team': '',
+        'opp_rank': '',
+        'ranks_overall':0,
+        'ranks_position': 0,
+        'passing_yds': 0,
+        'passing_tds': 0,
+        'passing_ints': 0,
+        'rushing_att': 0,
+        'rushing_yds': 0,
+        'rushing_tds': 0,
+        'receiving_receptions': 0,
+        'receiving_yds': 0,
+        'receiving_tds': 0,
+        'number_firve_fp': 0,
+        'fanduel_cost': 0,
+        'fanduel_value': 0
+}
+chosen_player_stats = []
 def get_player_stats():
     player = get_player()
     for p in new_players:
-        if p.__contains__(player):
-            print p
-get_player_stats()
+        p = p.lower()
+        if p.__contains__(player.lower()):
+            return p
+
+def get_attrs_of_player():
+    return get_player_stats()
+
+print get_attrs_of_player()
