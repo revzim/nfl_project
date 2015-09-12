@@ -80,12 +80,6 @@ def get_player():
     print 'You chose %s' % answer
     print 'Please wait while we search up your stats...'
     chosen_player = answer.lower()
-    chosen_player = raw_input()
-    if chosen_player == "%s %s" % (player.player_fname, player.player_lname):
-        print 'Please wait while we search up your stats...'
-    else:
-        print 'Player not in list, choose new player:'
-        chosen_player = raw_input()
     return chosen_player
 #get_player()
 
@@ -123,9 +117,3 @@ def get_attrs_of_player():
     return get_player_stats()
 
 print get_attrs_of_player()
-for p in player_objs:
-    fullname = "%s %s" % (p.player_fname, p.player_lname)
-    if player == fullname:
-        attrs = vars(p)
-        print '\n'.join("%s: %s" % item for item in attrs.items())
-get_player_stats()
