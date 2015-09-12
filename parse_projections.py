@@ -82,7 +82,6 @@ def get_player():
     chosen_player = answer.lower()
     return chosen_player
 #get_player()
-
 player_dict = {
         'fname': '',
         'lname': '',
@@ -105,15 +104,13 @@ player_dict = {
         'fanduel_cost': 0,
         'fanduel_value': 0
 }
+
 chosen_player_stats = []
 def get_player_stats():
     player = get_player()
-    for p in new_players:
-        p = p.lower()
-        if p.__contains__(player.lower()):
-            return p
-
-def get_attrs_of_player():
-    return get_player_stats()
-
-print get_attrs_of_player()
+    for p in player_objs:
+        fullname = "%s %s" % (p.player_fname, p.player_lname)
+        if player.lower() == fullname.lower():
+            attrs = vars(p)
+            print '\n'.join("%s: %s" % item for item in attrs.items())
+get_player_stats()
