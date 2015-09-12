@@ -76,10 +76,19 @@ for player in player_objs:
 chosen_player = ''
 def get_player():
     print 'Which player\'s stats would you like to view?'
+<<<<<<< HEAD
     answer = raw_input()
     print 'You chose %s' % answer
     print 'Please wait while we search up your stats...'
     chosen_player = answer.lower()
+=======
+    chosen_player = raw_input()
+    if chosen_player == "%s %s" % (player.player_fname, player.player_lname):
+        print 'Please wait while we search up your stats...'
+    else:
+        print 'Player not in list, choose new player:'
+        chosen_player = raw_input()
+>>>>>>> 2c8a72948c3887a6ee5eb837dc253637f7e7762e
     return chosen_player
 #get_player()
 
@@ -108,6 +117,7 @@ player_dict = {
 chosen_player_stats = []
 def get_player_stats():
     player = get_player()
+<<<<<<< HEAD
     for p in new_players:
         p = p.lower()
         if p.__contains__(player.lower()):
@@ -117,3 +127,11 @@ def get_attrs_of_player():
     return get_player_stats()
 
 print get_attrs_of_player()
+=======
+    for p in player_objs:
+        fullname = "%s %s" % (p.player_fname, p.player_lname)
+        if player == fullname:
+            attrs = vars(p)
+            print '\n'.join("%s: %s" % item for item in attrs.items())
+get_player_stats()
+>>>>>>> 2c8a72948c3887a6ee5eb837dc253637f7e7762e
