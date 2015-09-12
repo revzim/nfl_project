@@ -82,30 +82,6 @@ def get_player():
     chosen_player = answer.lower()
     return chosen_player
 #get_player()
-player_dict = {
-        'fname': '',
-        'lname': '',
-        'player_position': '',
-        'player_team': '',
-        'opp_team': '',
-        'opp_rank': '',
-        'ranks_overall':0,
-        'ranks_position': 0,
-        'passing_yds': 0,
-        'passing_tds': 0,
-        'passing_ints': 0,
-        'rushing_att': 0,
-        'rushing_yds': 0,
-        'rushing_tds': 0,
-        'receiving_receptions': 0,
-        'receiving_yds': 0,
-        'receiving_tds': 0,
-        'number_firve_fp': 0,
-        'fanduel_cost': 0,
-        'fanduel_value': 0
-}
-
-chosen_player_stats = []
 def get_player_stats():
     player = get_player()
     for p in player_objs:
